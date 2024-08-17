@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money2Make - Accueil</title>
+    <link rel="stylesheet" href="https://money2make.github.io/assets/styles.css">
+    <link rel="stylesheet" href="assets/Style/membercount.css">
+    <link rel="stylesheet" href="assets/Style/mainpage.css">
+
+    <link rel="shortcut icon" href="https://money2make.github.io/assets/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://money2make.github.io/assets/logo.png" alt="Logo du site">
+                <h1>Money2Make</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#stats">Statistiques</a></li>
+                    <li><a href="/formations">Nos Formations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>            
+            <a href="/discord" class="cta-button">Nous rejoindre</a>
+        </div>
+    </header>
+
+    <div class="banner" id="banner">
+        <span id="banner-message"></span>
+        <button class="close-btn" onclick="closeBanner()">×</button>
+    </div>
+
+    <main>
+        <!-- Section Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Transformez vos idées en revenus</h2>
+                <p>Découvrez les meilleures stratégies et outils pour développer vos compétences et créer des opportunités de revenus en ligne.</p>
+                <a href="#about" class="cta-button">En savoir plus</a>
+            </div>
+        </section>
+
+        <!-- Section À Propos -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>À Propos de Money2Make</h2>
+                <p>Money2Make est une plateforme dédiée à l'entrepreneuriat digital. Nous offrons des ressources, des conseils et des formations pour aider les entrepreneurs à réussir dans le monde en ligne.</p>
+                <p>Notre mission est d'équiper les entrepreneurs et les professionnels avec les compétences nécessaires pour naviguer et prospérer dans le domaine numérique.</p>
+                <p>Que vous soyez un débutant ou un professionnel chevronné, Money2Make a quelque chose à offrir pour améliorer vos compétences et maximiser votre potentiel de revenu.</p>
+            </div>
+        </section>
+
+        <!-- Section Statistiques -->
+        <section id="stats" class="stats">
+            <div class="container">
+                <h2>Nos Statistiques</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3 id="formation-count">...</h3>
+                        <p>Formations disponibles</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="presence-count">...</h3>
+                        <p>Utilisateurs en ligne</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>120+</h3>
+                        <p>Auteurs experts</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>Taux de satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contactez-nous</h2>
+                <p>Vous avez une question ou besoin d'aide ? Rejoignez notre communauté sur Discord ou envoyez-nous un message.</p>
+                <a href="/discord" class="cta-button">Rejoindre notre Discord</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Money2Make. Tous droits réservés.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#stats">Statistiques</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>   
+</body>
+</html>
+<script src="https://money2make.github.io/assets/script/banner.js"></script>
+<script src="https://money2make.github.io/assets/script/loadFstats.js"></script>
+<script src="https://money2make.github.io/assets/Script/membercount.js"></script>

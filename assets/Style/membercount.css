@@ -1,0 +1,19 @@
+.stat-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2em;
+    margin: 0;
+    color: #007BFF;
+}
+
+.stat-item p {
+    font-size: 1.2em;
+    color: #666;
+}
