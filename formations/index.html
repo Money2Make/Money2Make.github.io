@@ -5,7 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money2Make</title>
     <link rel="stylesheet" href="https://money2make.github.io/assets/styles.css">
+    <link rel="stylesheet" href="https://money2make.github.io/assets/formations.css">
+
     <link rel="shortcut icon" href="https://money2make.github.io/assets/logo.png" type="image/x-icon">
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Découvrez Money2Make, votre plateforme de formations en ligne pour maîtriser de nouvelles compétences. Rejoignez notre communauté active de plus de [Nombre d'utilisateurs en ligne] utilisateurs connectés sur Discord, accédez à des ressources exclusives et développez vos compétences dès aujourd'hui !">
+    <meta name="keywords" content="Formations en ligne, Compétences numériques, Apprentissage, Money2Make, Communauté, Discord">
+    <meta name="author" content="Money2Make Team">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Money2Make - Learn and Succeed Online">
+    <meta property="og:description" content="Découvrez Money2Make, votre plateforme de formations en ligne pour maîtriser de nouvelles compétences. Rejoignez notre communauté active de plus de [Nombre d'utilisateurs en ligne] utilisateurs connectés sur Discord, accédez à des ressources exclusives et développez vos compétences dès aujourd'hui !">
+    <meta property="og:image" content="https://money2make.github.io/assets/logo.png"> <!-- URL to the image/icon -->
+    <meta property="og:url" content="https://money2make.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="500"> <!-- Largeur de l'image -->
+    <meta property="og:image:height" content="500">
+    <meta property="og:site_name" content="Money2Make">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card Meta Tags (pour optimiser l'affichage sur Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Money2Make - Learn and Succeed Online">
+    <meta name="twitter:description" content="Free web tutorials, resources, and guides.">
+    <meta name="twitter:image" content="https://money2make.github.io/assets/logo.png">
+    <meta name="twitter:site" content="@Money2Make">
 </head>
 <body>
     <header>
@@ -34,106 +59,32 @@
 
     <div class="container">
         <input type="text" id="search" class="search-bar" placeholder="Rechercher une formation...">
-
+        
+        <!-- Mini-Menu pour Filtrer par Catégories -->
+        <div class="category-filter">
+            <select id="categorySelect" class="category-select">
+                <option value="all">Toutes les catégories</option>
+                <option value="Entreprenariat">Entrepreneuriat</option>
+                <option value="Bourse">Bourse</option>
+                <option value="Business">Business</option>
+                <option value="Immobilier">Immobilier</option>
+                <option value="Trading">Trading</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Social Media Marketing">SMMA</option>
+                <option value="Gym">Gym</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Argent-rapide">Argent rapide</option>
+                <option value="Autre">Autre</option>
+            </select>
+        </div>
+    
         <div id="formations" class="grid-container">
             <!-- Les formations seront insérées ici -->
         </div>
     </div>
+    
 </body>
 </html>
-<script>
-let formations = [];
-
-// Charger le fichier JSON
-fetch('https://money2make.github.io/formations/formations.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Le fichier JSON n\'a pas pu être chargé');
-        }
-        return response.json();
-    })
-    .then(data => {
-        formations = data.formations; // On accède à la propriété "formations"
-        afficherFormations(formations); // On appelle la fonction pour afficher les formations
-    })
-    .catch(error => {
-        console.error('Erreur:', error);
-    });
-
-// Fonction pour afficher les formations
-function afficherFormations(formations) {
-    const container = document.getElementById('formations');
-    container.innerHTML = ''; // Effacer le contenu précédent
-    formations.forEach(formation => {
-        const item = document.createElement('div');
-        item.className = 'grid-item';
-        item.innerHTML = `
-            <h3>${formation.title}</h3>
-            <p>Catégorie: ${formation.category}</p>
-            <p><strong>Utilisateur:</strong> ${formation.author}</p> <!-- Ajout de l'auteur -->
-            <div class="tags">
-                ${formation.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-            <a href="${formation.Link}" target="_blank">Voir la formation</a>
-        `;
-        container.appendChild(item);
-    });
-}
-// Filtrer les formations en fonction de la recherche
-document.getElementById('search').addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    const filteredFormations = formations.filter(formation => {
-        return formation.title.toLowerCase().includes(query) ||
-            formation.category.toLowerCase().includes(query) ||
-            formation.tags.some(tag => tag.toLowerCase().includes(query));
-    });
-    afficherFormations(filteredFormations);
-});
-</script>
-<script>
-// Fonction pour afficher le bandeau
-function showBanner(message) {
-            const banner = document.getElementById('banner');
-            document.getElementById('banner-message').textContent = message;
-            banner.style.display = 'block'; // Afficher le bandeau
-        }
-
-        // Fonction pour fermer le bandeau
-        function closeBanner() {
-            document.getElementById('banner').style.display = 'none'; // Cacher le bandeau
-        }
-
-        // Exemple d'affichage du bandeau après 1 seconde
-        setTimeout(() => {
-            showBanner('Bienvenue ! Le site est en bêta. Pour toute demande ou pour signaler un bug, veuillez rejoindre notre Discord !');
-        }, 1000);
-</script>
-<style>
-    /* Style de la bande déroulante */
-    .banner {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #38b6ff; /* Couleur du fond */
-        color: white; /* Couleur du texte */
-        text-align: center;
-        padding: 10px 0;
-        font-size: 16px;
-        z-index: 1000; /* Assure que le bandeau est au-dessus des autres éléments */
-        display: none; /* Par défaut, caché */
-    }
-
-    /* Style pour le bouton de fermeture */
-    .banner .close-btn {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-    }
-</style>
+<script src="https://money2make.github.io/assets/Script/formation.js"></script>
+<script scr="https://money2make.github.io/assets/Script/notif.js"></script>
