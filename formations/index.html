@@ -67,6 +67,15 @@
         <button class="close-btn" onclick="closeBanner()">×</button>
     </div>
 
+    <!-- Section pour laisser un avis
+    <div id="review-section" class="review-section">
+        <h2>Exprimez Votre Avis !</h2>
+        <p>Nous espérons que vous appréciez notre site. Cliquez ci-dessous pour laisser un avis sur notre serveur Discord via Disboard !</p>
+        <a href="https://disboard.org/fr/server/1222608174113226903" target="_blank" class="cta-button">Laisser un Avis sur Disboard</a>
+    </div>  -->
+
+
+
     <div class="container">
         <input type="text" id="search" class="search-bar" placeholder="Rechercher une formation...">
         
@@ -88,24 +97,15 @@
                 <option value="Autre">Autre</option>
             </select>
         </div>
-        <div id="reviewModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <h2>Aimez-vous notre site ?</h2>
-                <p>Si vous appréciez notre contenu, veuillez laisser un avis sur notre serveur Discord via Disboard !</p>
-                <a href="https://disboard.org/fr/server/1222608174113226903" target="_blank" class="cta-button" onclick="gtag('event', 'click', { 'event_category': 'Disboard Review', 'event_label': 'Review Modal Button', 'event_action': 'click' });">
-                    Laisser un avis
-                </a>
-            </div>
-        </div>
         
         <div id="formations" class="grid-container">
             <!-- Les formations seront insérées ici -->
         </div>
     </div>
-    
 </body>
 </html>
 <script src="https://money2make.github.io/assets/Script/formations.js"></script>
 <script scr="https://money2make.github.io/assets/Script/notif.js"></script>
 <script src="https://money2make.github.io/assets/Script/modal.js"></script>
+
+<!--  

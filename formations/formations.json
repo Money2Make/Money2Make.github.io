@@ -1223,6 +1223,14 @@
             "Link": "https://mega.nz/folder/Q6IzVQ5T#8IV9jRkF9GsZH_lY_p0rEw",
             "tags": ["Marketing", "Project Management"],
             "author": "Admin"
+        },
+        {
+            "id" : 154,
+            "title": "DB Trading - Market Robber",
+            "category" : "Trading",
+            "Link" : "https://mega.nz/folder/IfxhzQ4S#bkAeAajZnsF3-8s0S8ajKA/folder/xOZljK4R",
+            "tags" : ["Trading", "Video", "Francais"],
+            "author" : "Admin"
         }
     ]
 }

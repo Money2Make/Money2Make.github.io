@@ -20,21 +20,34 @@ fetch('https://money2make.github.io/formations/formations.json')
 function afficherFormations(formations) {
     const container = document.getElementById('formations');
     container.innerHTML = ''; // Effacer le contenu précédent
-    formations.forEach(formation => {
-        const item = document.createElement('div');
-        item.className = 'grid-item';
-        item.innerHTML = `
-            <h3>${formation.title}</h3>
-            <p>Catégorie: ${formation.category}</p>
-            <p><strong>Utilisateur:</strong> ${formation.author}</p> <!-- Ajout de l'auteur -->
-            <div class="tags">
-                ${formation.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-            <a href="${formation.Link}" target="_blank">Voir la formation</a>
-        `;
-        container.appendChild(item);
-    });
+
+    if (formations.length === 0) {
+        // Si aucune formation n'est trouvée, afficher un message
+        const message = document.createElement('p');
+        message.textContent = "Aucune formation trouvée pour votre recherche.";
+        message.style.color = '#666';
+        message.style.textAlign = 'center';
+        message.style.fontSize = '1.2em';
+        container.appendChild(message);
+    } else {
+        // Sinon, afficher les formations trouvées
+        formations.forEach(formation => {
+            const item = document.createElement('div');
+            item.className = 'grid-item';
+            item.innerHTML = `
+                <h3>${formation.title}</h3>
+                <p>Catégorie: ${formation.category}</p>
+                <p><strong>Utilisateur:</strong> ${formation.author}</p>
+                <div class="tags">
+                    ${formation.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+                <a href="${formation.Link}" target="_blank">Voir la formation</a>
+            `;
+            container.appendChild(item);
+        });
+    }
 }
+
 // Filtrer les formations en fonction de la recherche
 document.getElementById('search').addEventListener('input', function() {
     const query = this.value.toLowerCase();
