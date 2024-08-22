@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Google Analytics</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2TEL4FGS4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Configurer ton tracking Google Analytics
+        gtag('config', 'G-N2TEL4FGS4', { 'debug_mode':true });
+        gtag('create', 'G-N2TEL4FGS4', 'auto'); // Remplace 'UA-XXXXX-Y' par ton propre ID de suivi
+        gtag('send', 'pageview');
+    </script>
+    <script>
+    // Envoyer les données à Google Analytics
+            gtag("event", "purchase", {
+                transaction_id: "T_12345",
+                // Sum of (price * quantity) for all items.
+                value: 72.05,
+                tax: 3.60,
+                shipping: 5.99,
+                currency: "USD",
+                coupon: "SUMMER_SALE",
+                items: [
+                {
+                item_id: "SKU_12345",
+                item_name: "Stan and Friends Tee",
+                affiliation: "Google Merchandise Store",
+                coupon: "SUMMER_FUN",
+                discount: 2.22,
+                index: 0,
+                item_brand: "Google",
+                item_category: "Apparel",
+                item_category2: "Adult",
+                item_category3: "Shirts",
+                item_category4: "Crew",
+                item_category5: "Short sleeve",
+                item_list_id: "related_products",
+                item_list_name: "Related Products",
+                item_variant: "green",
+                location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                price: 10.01,
+                quantity: 3
+                },
+                {
+                item_id: "SKU_12346",
+                item_name: "Google Grey Women's Tee",
+                affiliation: "Google Merchandise Store",
+                coupon: "SUMMER_FUN",
+                discount: 3.33,
+                index: 1,
+                item_brand: "Google",
+                item_category: "Apparel",
+                item_category2: "Adult",
+                item_category3: "Shirts",
+                item_category4: "Crew",
+                item_category5: "Short sleeve",
+                item_list_id: "related_products",
+                item_list_name: "Related Products",
+                item_variant: "gray",
+                location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                price: 21.01,
+                promotion_id: "P_12345",
+                promotion_name: "Summer Sale",
+                quantity: 2
+                }]
+            });
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
