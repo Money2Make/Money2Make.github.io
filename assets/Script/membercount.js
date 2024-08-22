@@ -1,6 +1,6 @@
 async function fetchPresenceCount() {
     try {
-        const response = await fetch('https://canary.discord.com/api/v10/guilds/1222608174113226903/widget.json');
+        const response = await fetch('https://discord.com/api/guilds/1276173840573272175/widget.json');
         if (!response.ok) {
             throw new Error('Erreur lors de la récupération des données');
         }
